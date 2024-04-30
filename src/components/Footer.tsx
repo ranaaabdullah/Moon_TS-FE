@@ -34,7 +34,7 @@ const Footer = () => {
               </div>
               <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 border-b lg:border-s border-white">
                 <div className="p-8">
-                  <h2 className="font-semibold text-lg uppercase">About us</h2>
+                  <h2 className="font-semibold text-lg-lg text-sm uppercase">About us</h2>
                   <div className="flex-col  mt-5">
                     <p className=" text-primary-200  text-sm font-light py-2">
                       Mission
@@ -55,7 +55,7 @@ const Footer = () => {
                 </div>
 
                 <div className="p-8">
-                  <h2 className="font-semibold text-lg uppercase">Services</h2>
+                  <h2 className="font-semibold text-lg-lg text-sm uppercase">Services</h2>
                   <div className="flex-col  mt-5">
                     <p className=" text-primary-200  text-sm font-light py-2">
                       Web design
@@ -76,7 +76,7 @@ const Footer = () => {
                 </div>
 
                 <div className="p-8">
-                  <h2 className="font-semibold text-lg uppercase">Portfolio</h2>
+                  <h2 className="font-semibold text-lg-lg text-sm uppercase">Portfolio</h2>
                   <div className="flex-col  mt-5">
                     <p className=" text-primary-200  text-sm font-light py-2">
                       Corporate websites

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { FC } from "react";
+import React, { ChangeEvent, FC } from "react";
 
 interface Props{
   label?:String;
@@ -9,6 +9,7 @@ interface Props{
   value?:any;
   type?:String;
   error?:String;
+  onChange?:(e: ChangeEvent<HTMLInputElement>)=>void
 }
 
 const InputText:FC<Props> = ({

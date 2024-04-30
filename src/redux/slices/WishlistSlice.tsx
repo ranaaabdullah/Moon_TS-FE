@@ -43,6 +43,7 @@ interface Product {
   name: string;
   image: string;
   price: number;
+  img?:any
 }
 
 interface WishlistState {
@@ -61,6 +62,7 @@ export const WishList = createSlice({
   reducers: {
     AddWish: (state, action: PayloadAction<Product>) => {
       const product = action.payload;
+      console.log(product)
       const exist = state.wishList.find((item) => item.id === product.id);
       if (!exist) {
         state.wishList.push(product);

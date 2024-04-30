@@ -19,7 +19,7 @@ const UserAvatar = () => {
           onClick={() => {
             if (user) setIsOpen(!isOpen);
             else {
-              navigate.push("login");
+              navigate.push("/login");
             }
           }}
           id="avatarButton"
@@ -32,6 +32,8 @@ const UserAvatar = () => {
               ? "https://avatars.mds.yandex.net/i?id=10a790b78034daa5a48dffb837e0ea63aa1182be-9293412-images-thumbs&n=13"
               : avatar
           }
+          width={100}
+          height={100}
           alt="User dropdown"
         />
         <div

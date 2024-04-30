@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "./Button";
 import { TruncateText } from "../utils/Utility";
+import Image from "next/image";
 
 const Card = ({ item, index, onClick }) => {
-  
   return (
     <div
       onClick={onClick}
@@ -11,7 +11,7 @@ const Card = ({ item, index, onClick }) => {
       className=" p-2  text-wrap   cursor-pointer rounded-lg"
     >
       <div className="lg:h-52 md:h-52  w-full">
-        <img
+        <Image
           className="rounded h-full w-full object-cover"
           src={
             item?.photos[0]
@@ -19,6 +19,8 @@ const Card = ({ item, index, onClick }) => {
               : "https://res.cloudinary.com/dmbxqt8i3/image/upload/v1708005972/imageUpload/image1_m65imn.png"
           }
           alt=""
+          width={100}
+          height={100}
         />
       </div>
       <div className="h-12 mb-4 ">

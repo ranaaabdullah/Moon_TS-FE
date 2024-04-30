@@ -1,16 +1,38 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+interface Product {
+  id: number;
+  price: number;
+  quantity: number;
+  img: string;
+  totalPrice: number;
+  name: string;
+  color: string;
+  countInStock: number | undefined;
+  count?: number;
+}
+
+interface CartState {
+  cart: Product[];
+  totalPrice: number;
+}
+
+const initialState: CartState = {
+  cart: [],
+  totalPrice: 0,
+};
 
 export const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    cart: [],
-    totalPrice: 0,
-  },
+  initialState,
   reducers: {
-    addToCart(state, action) {
+    // @ts-ignore
+    addToCart(state, action: PayloadAction<Product>) {
       const product = action.payload;
       try {
-        const exist = state.cart.find((item) => item.id === product.id);
+        const exist: any = state.cart.find(
+          (item: any) => item.id === product.id
+        );
         if (exist) {
           exist.quantity++;
           exist.totalPrice += product.totalPrice;
@@ -32,9 +54,12 @@ export const cartSlice = createSlice({
         return err;
       }
     },
-    AddQuantityAndPrice(state, action) {
-      const { quantity, price, id } = action.payload;
-      const updatedData = state.cart.map((item) => {
+    AddQuantityAndPrice(
+      state,
+      action: PayloadAction<{ price: number; id: number }>
+    ) {
+      const { price, id } = action.payload;
+      const updatedData = state.cart.map((item: any) => {
         if (item.id == id) {
           return {
             ...item,
@@ -47,9 +72,12 @@ export const cartSlice = createSlice({
       state.cart = updatedData;
       state.totalPrice += price;
     },
-    lessQuantityAndPrice(state, action) {
-      const { quantity, price, id } = action.payload;
-      const updatedData = state.cart.map((item) => {
+    lessQuantityAndPrice(
+      state,
+      action: PayloadAction<{ price: number; qunatity: number; id: number }>
+    ) {
+      const { price, id } = action.payload;
+      const updatedData = state.cart.map((item: any) => {
         if (item.id == id) {
           return {
             ...item,
@@ -65,11 +93,12 @@ export const cartSlice = createSlice({
     removeFromCart(state, action) {
       const { id, totalPrice } = action.payload;
 
-      state.cart = state.cart.filter((product) => product.id !== id);
+      state.cart = state.cart.filter((product: any) => product.id !== id);
       state.totalPrice -= totalPrice;
     },
     emptyCart(state) {
       state.cart = [];
+      state.totalPrice=0
     },
   },
 });
@@ -79,6 +108,6 @@ export const {
   removeFromCart,
   AddQuantityAndPrice,
   lessQuantityAndPrice,
-  emptyCart
+  emptyCart,
 } = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;

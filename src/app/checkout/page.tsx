@@ -1,8 +1,7 @@
+"use client";
 import React from "react";
-
 import { IoIosArrowBack } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import { BillBox, FormCheckout } from "./components";
 
 import { useFormik } from "formik";
@@ -17,25 +16,26 @@ import { useCreateOrder, useToast } from "../../hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { emptyCart } from "../../redux/slices/CartSlice";
 import { Button } from "../../components";
+import { useRouter } from "next/navigation";
 
 const Checkout = () => {
   //Hooks
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const dispatch = useDispatch();
   const stripe = useStripe();
   const elements = useElements();
   const { mutate, isPending, data, error } = useCreateOrder();
   const { showToast } = useToast();
 
-  const user = useSelector((state) => state?.auth?.user?.user);
-  const cart = useSelector((state) => state.cart.cart);
+  const user = useSelector((state: any) => state?.auth?.user?.user);
+  const cart = useSelector((state: any) => state.cart.cart);
 
-  console.log(error);
-  console.log(data);
+  console.log(cart);
   //Functions
   if (data?.data?.success) {
-    navigate("/shop");
+    navigate.push("/shop");
     showToast("Order Created Succesfully", "success");
+    //@ts-ignore
     dispatch(emptyCart());
   }
   const inputData = [
@@ -73,7 +73,7 @@ const Checkout = () => {
     email: "",
     Onote: "",
   };
-  const onSubmit = async (val) => {
+  const onSubmit = async (val: any) => {
     const data = modifyData(val);
     if (!stripe || !elements) {
       return;
@@ -91,9 +91,9 @@ const Checkout = () => {
     onSubmit,
   });
 
-  const modifyData = (payData) => {
+  const modifyData = (payData: any) => {
     console.log(payData);
-    const updatedCart = cart?.map((item) => {
+    const updatedCart = cart?.map((item: any) => {
       let cart;
       return (cart = {
         product: item.id,
@@ -133,12 +133,12 @@ const Checkout = () => {
             errors={errors}
           />
           <div className="flex lg:flex-row flex-col items-center lg:justify-between">
-            <Button className={"flex items-center gap-4"}>
+            <Button onClick={() => {}} className={"flex items-center gap-4"}>
               <IoIosArrowBack />
               Return to cart
             </Button>
             <Button
-              onClick={() => navigate("/shop")}
+              onClick={() => navigate.push("/shop")}
               className={
                 "flex gap-2 justify-center lg:!px-14 py-3  bg-primary-100 text-white  text-center"
               }

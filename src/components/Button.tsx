@@ -7,14 +7,14 @@ type BgColor = "red" | "blue" | "green" | "none";
 interface Props {
   className?: string;
   text?: string;
-  disable?: boolean;
+  disable?: Boolean | undefined;
   ref?: RefObject<HTMLDivElement>;
   onClick: () => void;
   id?: string;
   bg?: BgColor;
-  border?: boolean;
-  borderWhite?: string;
-  loader?: boolean;
+  border?: Boolean;
+  borderWhite?: Boolean;
+  loader?: Boolean;
   children?: ReactNode;
 }
 

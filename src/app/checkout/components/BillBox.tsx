@@ -1,12 +1,18 @@
-import React from "react";
+import React, { FC } from "react";
 import PaymentForm from "./PaymentForm";
 import { useSelector } from "react-redux";
 
-import imgCard from "../../../assets/card.png";
+import imgCard from "../../../../public/assets/card.png";
+import Image from "next/image";
 
-const BillBox = ({ handleSubmit,loading}) => {
-  const cartData = useSelector((state) => state.cart);
+interface Props {
+  handleSubmit:()=>void;
+  loading:Boolean
+}
 
+const BillBox:FC<Props> = ({ handleSubmit,loading}) => {
+  const cartData = useSelector((state:any) => state.cart);
+console.log(cartData)
   // const stripePromise = loadStripe(
   //   "pk_test_51NzIqNBrJDSCC8vY3LvdBzXSfHNHNRhmitjgLKbKVZjtJ2XGv3VgRoxkJxaxAJFCeAS12BFxxJjgPpPTJGICoYU20066LIu3ts"
   // );
@@ -21,7 +27,7 @@ const BillBox = ({ handleSubmit,loading}) => {
           <h2 className="text-xl font-semibold">Subtotal</h2>
         </div>
         <div className="pt-8 flex flex-col gap-2 ">
-          {cartData.cart?.map((item) => {
+          {cartData.cart?.map((item:any) => {
             return (
               <div className="flex items-center  justify-between ">
                 <p className="lg:text-base text-sm">
@@ -55,7 +61,7 @@ const BillBox = ({ handleSubmit,loading}) => {
             <h2 className="text-white font-semibold  text-lg">Payment</h2>
             <div className="flex items-center pb-6 pt-3 border-b border-white   justify-between">
               <p className="text-white">Credit Card</p>
-              <img src={imgCard} alt="" />
+              <Image src={imgCard} alt="" />
             </div>
           </div>
          

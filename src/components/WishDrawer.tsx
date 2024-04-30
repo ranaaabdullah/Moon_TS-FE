@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { IsOpen } from "../redux/slices/WishlistSlice";
-import { CiHeart } from "react-icons/ci";
-import Button from "./Button";
 import WishCard from "./WishCard";
 
 const WishDrawer = () => {

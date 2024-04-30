@@ -1,11 +1,19 @@
-import React, { useRef } from "react";
+import React, { ChangeEvent, FC, useRef } from "react";
 import InputText from "../../../components/inputField/InputText";
 import InputSelect from "../../../components/inputField/InputSelect";
 import InputTextArea from "../../../components/inputField/InputTextArea";
 
-import { Button } from "../../../components";
+interface Props {
+  inputData?:any;
+  handleSubmit?:()=>void;
+  handleChange?:(e: ChangeEvent<HTMLInputElement>)=>void;
 
-const FormCheckOut = ({
+
+  values:any;
+  errors:any
+}
+
+const FormCheckOut:FC<Props> = ({
   inputData,
   handleSubmit,
   handleChange,
@@ -19,7 +27,7 @@ const FormCheckOut = ({
     <div>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 px-2  lg:grid-cols-2 gap-4 lg:w-[700px]">
-          {inputData?.map((input) => (
+          {inputData?.map((input:any) => (
             <>
               <div
                 className={
