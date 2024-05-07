@@ -1,3 +1,4 @@
+'use client'
 import React, { FC, useEffect, useState } from "react";
 import { IoHeartDislikeOutline } from "react-icons/io5";
 import Button from "./Button";
@@ -35,12 +36,21 @@ const WishCard: FC<Props> = ({ data, exists }) => {
     }
   };
 
-  console.log(data.img);
+  console.log(data?.img);
   return (
     <div className="py-2">
       <div className="flex items-center gap-4 border-t p-4  border-primary-100 ">
-        <div className="w-20 h-20 object-contain">
-          <Image src={data.image} alt="" width={0} height={0} />
+        <div className="w-20 h-20  border-red-600 border block">
+          <Image
+          // style={{height:'100%',width:'100%'}}
+            src={data?.img}
+            width={1000}
+            height={1000}
+            className="object-cover"
+            alt="product"
+            objectFit="cover"
+            layout="responsive"
+          />
         </div>
         <div className="flex flex-col font-semibold text-primary-100">
           <p>{data.name}</p>

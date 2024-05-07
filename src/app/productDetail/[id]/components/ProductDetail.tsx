@@ -30,7 +30,7 @@ const ProductDetail: FC<Props> = ({ data, color, setColor, exist }) => {
   const navigate = useRouter();
   const user = useSelector((state: any) => state?.auth?.user?.user);
   const wishlist = useSelector((state: any) => state.wish.wishList);
-  const { productId } = useParams();
+  const { id:productId } = useParams();
 
   
   //States
@@ -40,6 +40,10 @@ const ProductDetail: FC<Props> = ({ data, color, setColor, exist }) => {
   const [quantity, setQuantity] = useState(1);
 
   const isHeart = wishlist?.some((item: any) => item.id == productId);
+
+
+  console.log({wishlist})
+  console.log(productId)
 
   //Functions
   const handleAdd = (product: any) => {
@@ -151,6 +155,7 @@ const ProductDetail: FC<Props> = ({ data, color, setColor, exist }) => {
           </Button>
           <Button
             onClick={() => {
+              console.log('first')
               dispatch(
                 //@ts-ignore
                 AddWish({

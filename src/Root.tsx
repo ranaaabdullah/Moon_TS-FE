@@ -13,7 +13,9 @@ interface Props {
 }
 
 const Root: FC<Props> = ({ children }) => {
-  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
+  const stripeKey = process.env.NEXT_PUBLIC_STRIPE_KEY || "";
+
+  const stripePromise = loadStripe(stripeKey);
 
   const loader = useSelector((state: any) => state.loader.loader);
 
