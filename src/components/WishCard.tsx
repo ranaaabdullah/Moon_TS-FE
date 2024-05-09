@@ -36,7 +36,6 @@ const WishCard: FC<Props> = ({ data, exists }) => {
     }
   };
 
-  console.log(data?.img);
   return (
     <div className="py-2">
       <div className="flex items-center gap-4 border-t p-4  border-primary-100 ">
