@@ -42,8 +42,6 @@ const ProductDetail: FC<Props> = ({ data, color, setColor, exist }) => {
   const isHeart = wishlist?.some((item: any) => item.id == productId);
 
 
-  console.log({wishlist})
-  console.log(productId)
 
   //Functions
   const handleAdd = (product: any) => {

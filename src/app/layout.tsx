@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -8,6 +8,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Footer, Header, Loader } from "@/components";
 import WishDrawer from "@/components/WishDrawer";
 import Root from "@/Root";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -9,7 +9,6 @@ import {
 import { Button } from "../../../components";
 
 const useOptions = () => {
-  console.log();
   const options = useMemo(
     () => ({
       style: {

@@ -35,7 +35,6 @@ export const productSlice = createSlice({
   reducers: {
     addProducts: (state, action:PayloadAction<Product[]>) => {
 
-      console.log(action)
       state.products = action.payload;
 
     },

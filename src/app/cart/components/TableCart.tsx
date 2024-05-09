@@ -41,7 +41,6 @@ const TableCart = ({ data }: any) => {
           </thead>
           <tbody>
             {data.map((item: any) => {
-              console.log(item)
               return (
                 <>
                   <tr className="bg-white border-b border-black">

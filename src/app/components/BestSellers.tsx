@@ -10,7 +10,7 @@ interface Props {
 }
 
 const BestSellers: FC<Props> = ({ title, data, images }) => {
-  const newData = data.length > images ? data?.slice(0, images) : data;
+  const newData = data?.length > images ? data?.slice(0, images) : data;
   const navigate = useRouter();
   return (
     <div className="flex flex-col mt-16  lg:gap-6 items-center lg:my-8  justify-center">

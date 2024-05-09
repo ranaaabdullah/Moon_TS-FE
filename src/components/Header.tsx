@@ -11,9 +11,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { IsOpen } from "../redux/slices/WishlistSlice";
 import Link from "next/link";
 import Image from "next/image";
+import SearchModal from "./modal/SearchModal";
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const [searchShow, setSearchShow] = useState(false);
   const dispatch = useDispatch();
   const isOpen = useSelector((state: any) => state.wish.isOpen);
 
@@ -41,29 +43,35 @@ const Header = () => {
       href: "/",
       key: "search",
       visible: false,
+      clickable: () => setSearchShow(!searchShow),
     },
     {
       img: avatar,
       href: "/",
       key: "avatar",
       visible: false,
+      clickable: () => {},
     },
     {
       img: heart,
       href: "/",
       key: "heart",
       visible: false,
+      clickable: () => {},
     },
     {
       img: cart,
       href: "/cart",
       key: "cart",
       visible: true,
+      clickable: () => {},
     },
   ];
 
   return (
     <header>
+      
+      <SearchModal open={searchShow} setOpen={setSearchShow} />
       <nav className="bg-white border-b border-gray-200 px-4 lg:px-6 py-4 ">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link href={"/"}>
@@ -84,6 +92,7 @@ const Header = () => {
               } else {
                 return (
                   <Link
+                    onClick={item.clickable}
                     key={item.href}
                     href={item.href}
                     className={`${!item.visible ? "hidden" : "block"} lg:block`}

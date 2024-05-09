@@ -12,7 +12,6 @@ interface Props {
 
 const BillBox:FC<Props> = ({ handleSubmit,loading}) => {
   const cartData = useSelector((state:any) => state.cart);
-console.log(cartData)
   // const stripePromise = loadStripe(
   //   "pk_test_51NzIqNBrJDSCC8vY3LvdBzXSfHNHNRhmitjgLKbKVZjtJ2XGv3VgRoxkJxaxAJFCeAS12BFxxJjgPpPTJGICoYU20066LIu3ts"
   // );

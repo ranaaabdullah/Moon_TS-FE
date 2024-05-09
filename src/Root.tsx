@@ -29,6 +29,7 @@ const Root: FC<Props> = ({ children }) => {
         <ScrollToTop />
         <ToastContainer />
         <Footer />
+        
       </Elements>
     </>
   );

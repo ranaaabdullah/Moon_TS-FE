@@ -22,11 +22,10 @@ const Home = () => {
   const navigate = useRouter();
   const dispatch = useDispatch();
   const { data }: any = useProductData({ page: null, category: null });
-//@ts-ignore
+  console.log(data)
+  //@ts-ignore
   const products = useSelector((state) => state?.product?.products);
-  console.log(products)
 
-  // console.log(first)
   //Functions
   dispatch(addProducts(data));
   return (

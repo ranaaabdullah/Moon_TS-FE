@@ -10,7 +10,6 @@ const Shop = () => {
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState();
   const { data } = useProductData({page,category:null})
-  console.log(data);
 
   return (
     <div className="lg:px-24 py-14">
