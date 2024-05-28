@@ -1,9 +1,9 @@
-'use client'
+"use client";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import SignUpImage from "../../../public/assets/signUp.jpg";
 
-import Button from "../../components/Button";
+import Button from "../../components/buttons/Button";
 import { InputText } from "../../components";
 import { useFormik } from "formik";
 import { signupSchema } from "../../schemas";
@@ -18,7 +18,7 @@ const SignUp = () => {
   //Hooks
   const { showToast } = useToast();
   const navigate = useRouter();
-  
+
   //Functions
   const initialValues = {
     name: "",
@@ -35,7 +35,7 @@ const SignUp = () => {
     },
   });
 
-  const handleSignUp = async (data:any) => {
+  const handleSignUp = async (data: any) => {
     const response = await network.post(URL.Register, data);
     if (!response.ok) return showToast(response.data.message, "error");
     showToast("User Registered Successfully", "success");
@@ -86,7 +86,7 @@ const SignUp = () => {
             error={errors.password}
             onChange={handleChange}
           />
-          <Link href={'/login'}>Already have an account!</Link>
+          <Link href={"/login"}>Already have an account!</Link>
           <Button
             onClick={handleSubmit}
             className={

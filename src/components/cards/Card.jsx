@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./Button";
-import { TruncateText } from "../utils/Utility";
+import Button from "../buttons/Button";
+import { TruncateText } from "../../utils/Utility";
 import Image from "next/image";
 
 const Card = ({ item, index, onClick }) => {

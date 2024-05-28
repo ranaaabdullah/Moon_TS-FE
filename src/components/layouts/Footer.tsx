@@ -2,7 +2,7 @@ import logo from "../../public/assets/logo2.png";
 // import logo from "../assets/logo2.png";
 import { FaArrowRight } from "react-icons/fa";
 import React from "react";
-import Button from "./Button";
+import Button from "../buttons/Button";
 import Image from "next/image";
 
 const Footer = () => {
@@ -24,7 +24,7 @@ const Footer = () => {
                       text={"white"}
                       className={"flex gap-1 px-4 lg:px-16"}
                       border={true}
-                      onClick={()=>{}}
+                      onClick={() => {}}
                     >
                       Get started
                       <FaArrowRight />
@@ -34,7 +34,9 @@ const Footer = () => {
               </div>
               <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 border-b lg:border-s border-white">
                 <div className="p-8">
-                  <h2 className="font-semibold text-lg-lg text-sm uppercase">About us</h2>
+                  <h2 className="font-semibold text-lg-lg text-sm uppercase">
+                    About us
+                  </h2>
                   <div className="flex-col  mt-5">
                     <p className=" text-primary-200  text-sm font-light py-2">
                       Mission
@@ -55,7 +57,9 @@ const Footer = () => {
                 </div>
 
                 <div className="p-8">
-                  <h2 className="font-semibold text-lg-lg text-sm uppercase">Services</h2>
+                  <h2 className="font-semibold text-lg-lg text-sm uppercase">
+                    Services
+                  </h2>
                   <div className="flex-col  mt-5">
                     <p className=" text-primary-200  text-sm font-light py-2">
                       Web design
@@ -76,7 +80,9 @@ const Footer = () => {
                 </div>
 
                 <div className="p-8">
-                  <h2 className="font-semibold text-lg-lg text-sm uppercase">Portfolio</h2>
+                  <h2 className="font-semibold text-lg-lg text-sm uppercase">
+                    Portfolio
+                  </h2>
                   <div className="flex-col  mt-5">
                     <p className=" text-primary-200  text-sm font-light py-2">
                       Corporate websites

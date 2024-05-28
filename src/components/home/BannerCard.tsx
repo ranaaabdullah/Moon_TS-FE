@@ -1,23 +1,21 @@
 import React, { FC } from "react";
-import Button from "../../components/Button";
-// import Button from "../../../components/Button"; 
+import Button from "../buttons/Button";
+// import Button from "../../../components/Button";
 
 import Image from "next/image";
 
-interface Props{
-  title?:String;
-  desc?:String;
-  img?:any;
-  button?:String;
-  swap?:Boolean;
-  heading?:String;
-  heading2?:String;
+interface Props {
+  title?: String;
+  desc?: String;
+  img?: any;
+  button?: String;
+  swap?: Boolean;
+  heading?: String;
+  heading2?: String;
   onClick?: any;
-
-
 }
 
-const BannerCard :FC<Props> = ({
+const BannerCard: FC<Props> = ({
   title,
   desc,
   img,

@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import LoaderAnimation from "../../public/assets/animations/loader.json";
+import LoaderAnimation from "../../../public/assets/animations/loader.json";
 import { FC } from "react";
 
 interface Props {

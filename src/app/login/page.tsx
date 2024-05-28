@@ -2,7 +2,7 @@
 import React from "react";
 import loginImage from "../../../public/assets/login.png";
 import { FaArrowRight } from "react-icons/fa6";
-import Button from "../../components/Button";
+import Button from "../../components/buttons/Button";
 import { InputText } from "../../components";
 
 import { useFormik } from "formik";
@@ -59,7 +59,9 @@ const LoginPage = () => {
           />
         </div>
         <div className="flex justify-center items-center gap-3 flex-col">
-          <h3 className="font-bold lg:text-5xl  text-2xl  py-2 tracking-widest ">Login</h3>
+          <h3 className="font-bold lg:text-5xl  text-2xl  py-2 tracking-widest ">
+            Login
+          </h3>
           <InputText
             placeholder={"Enter Email Address"}
             label={"Email Address"}

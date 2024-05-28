@@ -2,15 +2,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isChat } from "../redux/slices/ChatDrawerSlice";
-import WishCard from "./WishCard";
+import WishCard from "./cards/WishCard";
 import { InputText } from "./inputField";
 import { GrSend } from "react-icons/gr";
-import {io} from "socket.io-client";
+import { io } from "socket.io-client";
 
 const ChatDrawer = () => {
   const isOpenDrawer = useSelector((state: any) => state?.chat?.isChat);
 
-  const socket = io("http://localhost:3000");
+  const socket = io("http://localhost:8080");
 
   useEffect(() => {
     socket.on("connection", (socket) => {

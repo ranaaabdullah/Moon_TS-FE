@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import React from "react";
 import InputText from "../../../components/inputField/InputText";
-import Button from "../../../components/Button";
+import Button from "../../../components/buttons/Button";
 import { FaArrowRight } from "react-icons/fa";
 import InputTextArea from "../../../components/inputField/InputTextArea";
 
@@ -30,7 +30,7 @@ const ContactForm = () => {
           className={
             "flex gap-1 justify-center   bg-primary-100 text-white w-full text-center"
           }
-          onClick={()=>{}}
+          onClick={() => {}}
         >
           send message
           <FaArrowRight />

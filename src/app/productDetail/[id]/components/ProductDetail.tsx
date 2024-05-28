@@ -3,7 +3,7 @@ import React, { FC, useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 
-import Button from "../../../../components/Button";
+import Button from "../../../../components/buttons/Button";
 import Accordion from "../../../../components/Accordion";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -30,9 +30,8 @@ const ProductDetail: FC<Props> = ({ data, color, setColor, exist }) => {
   const navigate = useRouter();
   const user = useSelector((state: any) => state?.auth?.user?.user);
   const wishlist = useSelector((state: any) => state.wish.wishList);
-  const { id:productId } = useParams();
+  const { id: productId } = useParams();
 
-  
   //States
   const [showDetail, setShowDetail] = useState(false);
   const [showDimension, setShowDimension] = useState(false);
@@ -40,8 +39,6 @@ const ProductDetail: FC<Props> = ({ data, color, setColor, exist }) => {
   const [quantity, setQuantity] = useState(1);
 
   const isHeart = wishlist?.some((item: any) => item.id == productId);
-
-
 
   //Functions
   const handleAdd = (product: any) => {
@@ -143,7 +140,7 @@ const ProductDetail: FC<Props> = ({ data, color, setColor, exist }) => {
                 navigate.push("/login"),
                   showToast("Please Login First", "error");
               }
-              handleAdd(data)
+              handleAdd(data);
               navigate.push("/cart");
             }}
             className={"lg:!px-40"}
@@ -153,7 +150,7 @@ const ProductDetail: FC<Props> = ({ data, color, setColor, exist }) => {
           </Button>
           <Button
             onClick={() => {
-              console.log('first')
+              console.log("first");
               dispatch(
                 //@ts-ignore
                 AddWish({

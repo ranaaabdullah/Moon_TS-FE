@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Card from "../../components/Card";
+import Card from "../cards/Card";
 import { FC } from "react";
 
 interface Props {

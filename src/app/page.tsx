@@ -8,21 +8,22 @@ import image3 from "../../public/assets/image3.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useProductData } from "../hooks";
 import { useRouter } from "next/navigation";
+
+import { addProducts } from "@/redux/slices/ProductSlice";
 import {
   Banner,
   BannerCard,
   BestSellers,
   EmailCard,
   Section1,
-} from "./components";
-import { addProducts } from "@/redux/slices/ProductSlice";
+} from "@/components/home";
 
 const Home = () => {
   //Hooks
   const navigate = useRouter();
   const dispatch = useDispatch();
   const { data }: any = useProductData({ page: null, category: null });
-  console.log(data)
+  console.log(data);
   //@ts-ignore
   const products = useSelector((state) => state?.product?.products);
 

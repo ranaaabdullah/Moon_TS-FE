@@ -8,7 +8,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import ScrollToTop from "./utils/ScrollToTop";
 import { ToastContainer } from "react-toastify";
 import ChatDrawer from "./components/ChatDrawer";
-import ChatButton from "./components/ChatButton";
+import ChatButton from "./components/buttons/ChatButton";
 
 interface Props {
   children: ReactNode;
@@ -25,15 +25,14 @@ const Root: FC<Props> = ({ children }) => {
     <>
       <Elements stripe={stripePromise}>
         <WishDrawer />
-        <ChatDrawer/>
-        <ChatButton/>
+        <ChatDrawer />
+        <ChatButton />
         <Loader visible={loader} />
         <Header />
         {children}
         <ScrollToTop />
         <ToastContainer />
         <Footer />
-        
       </Elements>
     </>
   );

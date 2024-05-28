@@ -1,14 +1,13 @@
-'use client'
+"use client";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { IsOpen } from "../redux/slices/WishlistSlice";
-import WishCard from "./WishCard";
+import WishCard from "./cards/WishCard";
 
 const WishDrawer = () => {
-
-  const isOpenDrawer = useSelector((state:any) => state.wish.isOpen);
-  const drawerData = useSelector((state:any) => state.wish.wishList);
-  const cart = useSelector((state:any) => state.cart.cart);
+  const isOpenDrawer = useSelector((state: any) => state.wish.isOpen);
+  const drawerData = useSelector((state: any) => state.wish.wishList);
+  const cart = useSelector((state: any) => state.cart.cart);
 
   const dispatch = useDispatch();
 
@@ -60,8 +59,8 @@ const WishDrawer = () => {
           </>
         ) : (
           <div>
-            {drawerData?.map((product:any) => {
-              const exists = cart.find((item:any) => item.id == product.id);
+            {drawerData?.map((product: any) => {
+              const exists = cart.find((item: any) => item.id == product.id);
               return <WishCard data={product} exists={exists ? true : false} />;
             })}
           </div>

@@ -6,12 +6,12 @@ import avatar from "../../public/assets/home/Avatar.png";
 import heart from "../../public/assets/home/Heart.png";
 import cart from "../../public/assets/home/cart.png";
 
-import UserAvatar from "./UserAvatar";
+import UserAvatar from "../UserAvatar";
 import { useDispatch, useSelector } from "react-redux";
-import { IsOpen } from "../redux/slices/WishlistSlice";
+import { IsOpen } from "../../redux/slices/WishlistSlice";
 import Link from "next/link";
 import Image from "next/image";
-import SearchModal from "./modal/SearchModal";
+import SearchModal from "../modal/SearchModal";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -70,7 +70,6 @@ const Header = () => {
 
   return (
     <header>
-      
       <SearchModal open={searchShow} setOpen={setSearchShow} />
       <nav className="bg-white border-b border-gray-200 px-4 lg:px-6 py-4 ">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
